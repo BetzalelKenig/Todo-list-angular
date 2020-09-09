@@ -1,12 +1,19 @@
-<div class="row"><h1>Only put off until tomorrow what you are willing to die having left
-  undone.</h1></div>
-  <hr style=" background-color: royalblue;">
 <div class="row">
-  <div class="col-md-5" style="padding-right:20px; border-right: 1px solid #f00;">
+  <h1>
+    Only put off until tomorrow what you are willing to die having left undone.
+  </h1>
+</div>
+<button class="btn btn-primary" (click)="onFetch()">Fetch</button>
+<hr style="background-color: royalblue" />
+<div class="row">
+  <div
+    class="col-md-5"
+    style="padding-right: 20px; border-right: 1px solid #f00"
+  >
     <app-todo-list></app-todo-list>
   </div>
 
-  <div class="col-md-7 pl-5" >
+  <div class="col-md-7 pl-5">
     <router-outlet></router-outlet>
   </div>
 </div>

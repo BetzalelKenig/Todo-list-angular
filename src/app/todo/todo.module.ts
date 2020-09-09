@@ -11,8 +11,22 @@ import { TodoStartComponent } from './todo-start/todo-start.component';
 import { TodoEditComponent } from './todo-edit/todo-edit.component';
 import { TodoDetailsComponent } from './todo-details/todo-details.component';
 
+
 @NgModule({
-  declarations: [TodoComponent, TodoListComponent, TodoItemComponent, TodoStartComponent, TodoEditComponent, TodoDetailsComponent],
-  imports: [RouterModule, ReactiveFormsModule, TodoRoutingModule, CommonModule],
+  declarations: [
+    TodoComponent,
+    TodoListComponent,
+    TodoItemComponent,
+    TodoStartComponent,
+    TodoEditComponent,
+    TodoDetailsComponent,
+  ],
+  imports: [
+    RouterModule,
+    ReactiveFormsModule,
+    TodoRoutingModule,
+    CommonModule,
+   
+  ],
 })
 export class TodoModule {}

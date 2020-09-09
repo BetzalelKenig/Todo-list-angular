@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
+
 import { Subject } from 'rxjs';
 import { Todo } from './todo.model';
 
@@ -18,7 +21,7 @@ export class TodoService {
     new Todo('1', 'test6', 'the todo', new Date(), new Date(), false),
   ];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   setTodoList(todoLIst: Todo[]) {
     this.todoList = todoLIst;
@@ -49,7 +52,17 @@ export class TodoService {
     this.todoListChanged.next(this.todoList.slice());
   }
 
-  markDone(id: number){
+  markDone(id: number) {
     this.todoList[id].done = !this.todoList[id].done;
+  }
+
+  fetchTodoList() {
+    this.http.get<Todo[]>(
+      'http://localhost:8080/todo.json'
+    ).pipe(
+      tap((todoList) => {
+        this.setTodoList(todoList)
+      })
+    ).subscribe();
   }
 }
