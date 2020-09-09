@@ -1,0 +1,25 @@
+<div class="row" style="border: salmon dotted">
+  <div class="col-sm-8">
+    <h1>{{ todo.shortDescription }}</h1>
+  </div>
+  <div class="col-sm-4">Due: {{ todo.due | date: "shortDate" }}</div>
+</div>
+
+<div class="row">
+  <div class="col-md-12" style="min-height: 200px;">
+    {{ todo.description }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    Create At: {{ todo.createAt | date: "shortDate" }}
+  </div>
+</div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success" (click)="onEditTodo()">Edit</button>
+      <button class="btn btn-danger" (click)="onDeleteTodo()">Delete</button>
+      <button class="btn btn-warning" (click)="onDoneTodo()">Done</button>
+    </div>
+
+</div>

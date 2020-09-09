@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url("./assets/bbg.jpg");
+  /* background-color: rgba(0, 0, 0, 0.81); */
+  color: aqua;
+ }
+
+ button {
+   margin: 5px;
+ }

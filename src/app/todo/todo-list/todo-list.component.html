@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+      <button class="btn btn-success" (click)="onNewTodo()">New</button>
+      <button class="btn btn-primary" (click)="onTodayTodo()">Today</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-todo-item
+    *ngFor="let todoEl of todoList; let i = index"
+    [todo]="todoEl"
+    [index]="i"></app-todo-item>
+  </div>
+</div>

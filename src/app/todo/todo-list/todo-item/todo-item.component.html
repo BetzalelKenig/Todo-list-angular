@@ -1,0 +1,22 @@
+<a
+  #main
+  style="cursor: pointer"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+  style="
+    width: 400px;
+    border: 3px dotted purple;
+    background-color: rgba(115, 41, 41, 0.97);
+    margin-bottom: 15px;
+  "
+  [ngStyle]="{'border': color() }"
+>
+  <div class="float-left mr-auto">
+    <h4 class="list-group-item-heading"
+    [ngStyle]="{'text-decoration-line': done()}">{{ todo.shortDescription }}</h4>
+  </div>
+  <span class="float-right ml-auto">
+    <p class="list-group-item-text">Due {{ todo.due | date: "shortDate" }}</p>
+  </span>
+</a>
