@@ -11,7 +11,7 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./todo-edit.component.css'],
 })
 export class TodoEditComponent implements OnInit {
-  id: number;
+  id: string;
   editMode = false;
   todoForm: FormGroup;
   due = new Date();
@@ -24,7 +24,7 @@ export class TodoEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.id = +params.id;
+      this.id = params.id;
       this.editMode = params.id != null;
       this.initForm();
     });

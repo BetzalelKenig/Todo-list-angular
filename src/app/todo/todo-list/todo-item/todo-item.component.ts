@@ -1,29 +1,28 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from '../../todo.model';
-
 
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
-  styleUrls: ['./todo-item.component.css']
+  styleUrls: ['./todo-item.component.css'],
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
-  @Input() index: number;
- // @ViewChild('main', {static: false}) main: ElementRef;
+  @Input() index: string;
+  // index = this.todo.id;
+  // @ViewChild('main', {static: false}) main: ElementRef;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
+  color() {
+    return new Date() > new Date(this.todo.due)
+      ? '5px red dotted'
+      : '5px green dotted';
   }
 
-  color(){
-    return new Date() > new Date(this.todo.due) ? '5px red dotted' : '5px green dotted';
-  }
-
-  done(){
+  done() {
     return this.todo.done ? 'line-through' : 'none';
   }
-
 }

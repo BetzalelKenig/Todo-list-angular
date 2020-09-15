@@ -11,7 +11,7 @@ import { Todo } from '../todo.model';
 })
 export class TodoDetailsComponent implements OnInit {
   todo: Todo;
-  id: number;
+  id: string;
 
   constructor(
     private todoService: TodoService,
@@ -21,7 +21,7 @@ export class TodoDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.id = +params.id;
+      this.id = params.id;
       this.todo = this.todoService.getTodo(this.id);
     });
   }
